@@ -27,7 +27,7 @@ def consolidate_cart(cart)
       current_item[:count] = 1
       updated.push(current_item)
     else
-      increment_count_of_item( updated, current_item[:item] )
+     current_item[:count] += 1
     end
     cart_index += 1
   end
