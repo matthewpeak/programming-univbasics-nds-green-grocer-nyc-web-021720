@@ -42,13 +42,13 @@ def apply_coupons(cart, coupons)
 
   while coupons_index < coupons.size do
     discount = find_item_by_name_in_collection( coupons[coupons_index][:item], cart )
-      if ( applicable_for_discount[:count] / coupons[coupons_index][:num] >= 1 )
+      if ( discount[:count] / coupons[coupons_index][:num] >= 1 )
         cart.push( {:item => "#{coupons[coupons_index][:item]} W/COUPON",
                     :price => (coupons[coupons_index][:cost] / coupons[coupons_index][:num]).round(2),
                     :clearance => discount[:clearance],
                     :count => discount[:count] - ( discount[:count] % coupons[coupons_index][:num])})
 
-        applicable_for_discount[:count] %= coupons[coupons_index][:num]
+        discount[:count] %= coupons[coupons_index][:num]
       end
     coupons_index += 1
   end
