@@ -71,7 +71,7 @@ def apply_clearance(cart)
     checkout.push( current_item )
     cart_index += 1 
   end
-  ready_for_checkout
+  checkout
 end
 
 def checkout(cart, coupons)
@@ -84,4 +84,5 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  
 end
