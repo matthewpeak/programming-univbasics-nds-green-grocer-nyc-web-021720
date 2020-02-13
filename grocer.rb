@@ -23,7 +23,7 @@ def consolidate_cart(cart)
 
   while cart_index < cart.size do
     current_item = cart[cart_index]
-    if ( find_item_by_name_in_collection( current_item[:item], updated_cart ) == nil)
+    if ( find_item_by_name_in_collection( current_item[:item], updated ) == nil)
       current_item[:count] = 1
       updated.push(current_item)
     else
